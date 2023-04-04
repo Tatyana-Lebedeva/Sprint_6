@@ -18,7 +18,7 @@ public class LionConstructor {
         this.feline = null;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Пол. Тестовые данные:{0}{1}")
     public static Object[][] getTestData() {
         return new Object[][]{
                 {"Самец", true},
@@ -28,7 +28,7 @@ public class LionConstructor {
 
     @Test
     public void checkSexLionWhenHasManeResult() throws Exception {
-        Lion lion = new Lion(sex,feline);
+        Lion lion = new Lion(sex);
         boolean hasMane = lion.doesHaveMane();
         assertEquals(result, hasMane);
     }
